@@ -13,13 +13,16 @@ module.exports={
 	},
     watch:true,
     output:{
-        path: path.resolve(__dirname,'dist'),
+        path: __dirname,
         publicPath: "/",//webpack-server-dev下，跟path使用必需为/,不然坑B
         filename: "[name].js",
         chunkFilename: "[id].chunk.js"
     },
      devtool: 'inline-source-map',
-    module: {
+     module: {
+        postLoaders: [
+            { loader: "transform?brfs" }
+        ],
         loaders: [	//加载器
             {
                 test: /\.less$/,
@@ -41,7 +44,7 @@ module.exports={
                 loader: "html" 
             },
             {
-                test: /\.(png|jpg)$/, 
+                test: /\.(png|jpg|jpeg)$/, 
                 loader: 'url-loader?limit=8192&name=./img/[name].[ext]'
             }
         ]
