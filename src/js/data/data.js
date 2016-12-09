@@ -5,13 +5,13 @@ import imgUrl4 from '../../img/04.jpeg';
 
 module.exports = [
   {
-    title: '1 Unbelievable Secrets That Will Make Your Airline Pilot Nervous',
+    title: 'react',
     link: "http://baidu.com",
     excerpt: 'With these words the Witch fell down in a brown, melted, shapeless mass and began to spread over the clean boards of the kitchen floor.  Seeing that she had really melted away to nothing, Dorothy drew another bucket of water and threw it over the mess.  She then swept it all out the door.  After picking out the silver shoe, which was all that was left of the old woman, she cleaned and dried it with a cloth, and put it on her foot again.  Then, being at last free to do as she chose, she ran out to the courtyard to tell the Lion that the Wicked Witch of the West had come to an end, and that they were no longer prisoners in a strange land.',
     imageUrl: imgUrl1
   },
   {
-    title: '2Will Batman Save Leaf Blowing?',
+    title: 'pixi',
     link: "http://baidu.com",
     excerpt: 'The splendid fellow sprang to his feet, and grasping me by the shoulder raised his sword on high, exclaiming: "And had the choice been left to me I could not have chosen a more fitting mate for the first princess of Barsoom.  Here is my hand upon your shoulder, John Carter, and my word that Sab Than shall go out at the point of my sword for the sake of my love for Helium, for Dejah Thoris, and for you.  This very night I shall try to reach his quarters in the palace." "How?" I asked.  "You are strongly guarded and a quadruple force patrols the sky." He bent his head in thought a moment, then raised it with an air of confidence.',
     imageUrl: imgUrl2

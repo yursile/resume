@@ -1,0 +1,71 @@
+.start-screen {
+  display: flex;
+  justify-content: center;
+  flex-flow: nowrap column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #1fa2ed;
+  color: #fff;
+}
+.loading {
+  display: flex;
+  margin: 24px 0;
+}
+.loading__element {
+  font: normal 100 2rem/1 Roboto;
+  letter-spacing: .5em;
+}
+[class*="el"] {
+  animation: bouncing 2s infinite ease;
+}
+/*@for $i from 1 through 9 {
+  $delay: percentage($i);
+  .el#{$i} {
+    animation-delay: $delay / 1000% + s;
+  }
+}*/
+/*@delay: percentage(@i);*/
+.el8 {
+  animation-delay: 0.8s;
+}
+/*@delay: percentage(@i);*/
+.el7 {
+  animation-delay: 0.7s;
+}
+/*@delay: percentage(@i);*/
+.el6 {
+  animation-delay: 0.6s;
+}
+/*@delay: percentage(@i);*/
+.el5 {
+  animation-delay: 0.5s;
+}
+/*@delay: percentage(@i);*/
+.el4 {
+  animation-delay: 0.4s;
+}
+/*@delay: percentage(@i);*/
+.el3 {
+  animation-delay: 0.3s;
+}
+/*@delay: percentage(@i);*/
+.el2 {
+  animation-delay: 0.2s;
+}
+/*@delay: percentage(@i);*/
+.el1 {
+  animation-delay: 0.1s;
+}
+@keyframes bouncing {
+  0%,
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(0, 0, 1);
+  }
+}
