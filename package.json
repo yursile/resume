@@ -52,8 +52,8 @@
     "webpack-spritesmith": "^0.2.6"
   },
   "dependencies": {
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
+    "react": "~0.14.8",
+    "react-dom": "~0.14.8",
     "react-weui": "^0.4.0",
     "weui": "^0.4.3"
   }

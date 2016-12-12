@@ -52,6 +52,9 @@ var Page = React.createClass({
 
     // Layout title and excerpt below image.
     titleStyle.height = this.linkMetrics.height;
+    // if (this.props.article.title.length > 20) {
+    //   titleStyle.height = this.linkMetrics.height*2;
+    // }
     linkStyle.top = titleStyle.top + titleStyle.height + CONTENT_INSET;
     linkStyle.height = 2*CONTENT_INSET;
 
@@ -60,14 +63,34 @@ var Page = React.createClass({
     excerptStyle.top = linkStyle.top + linkStyle.height + CONTENT_INSET;
     excerptStyle.height = this.props.height - excerptStyle.top - CONTENT_INSET;
 
-    return (
-      <Group style={groupStyle}>
-        <Image style={imageStyle} src={this.props.article.imageUrl} fadeIn={true} useBackingStore={true} />
+            //  <Text style={excerptStyle}>{this.props.article.excerpt}</Text>
+    
+    var textsNode;
+    if (this.props.article.link) {
+      textsNode = (
         <Group style={this.getTextGroupStyle()} useBackingStore={true}>
           <Text style={titleStyle}>{this.props.article.title}</Text>
           <Text style={linkStyle} onClick={this.go2Link}>{this.props.article.link}</Text>
           <Text style={excerptStyle}>{this.props.article.excerpt}</Text>
         </Group>
+       )
+    } else {
+      excerptStyle.top = linkStyle.top;
+      textsNode = (
+        <Group style={this.getTextGroupStyle()} useBackingStore={true}>
+          <Text style={titleStyle}>{this.props.article.title}</Text>
+          <Text style={excerptStyle}>{this.props.article.excerpt}</Text>
+        </Group>
+       )
+    }
+   
+
+    return (
+      <Group style={groupStyle}>
+        <Image style={imageStyle} src={this.props.article.imageUrl} fadeIn={true} useBackingStore={true} />
+   
+          {textsNode}
+  
       </Group>
     );
   },
@@ -147,6 +170,39 @@ var Page = React.createClass({
       translateY: translateY,
       zIndex: TEXT_LAYER_INDEX
     };
+  }
+
+});
+
+
+
+var Paragraph = React.createClass({
+  render: function () {
+    var lineStyle = Object.assign({},this.props.style);
+    delete lineStyle.top
+    delete lineStyle.height 
+    
+    var texts;
+    if (this.props.ps instanceof Array) {
+       lineStyle.height = this.props.excerptMetrics.height;
+       texts = this.props.ps.map(function (v) {
+          return (
+            <Text style={lineStyle}>{v}</Text>
+          )
+        })
+    } else {
+
+      texts=  <Text style={lineStyle}>{this.props.ps}</Text>
+    }
+    
+    
+   
+
+    return (
+      <Group style={this.props.style}>
+        {this.texts}
+      </Group>
+    )
   }
 
 });
