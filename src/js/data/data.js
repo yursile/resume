@@ -4,6 +4,10 @@ import imgUrl3 from '../../img/03.jpeg';
 import imgUrl4 from '../../img/04.jpeg';
 import info from '../../img/info.png';
 import running from "../../img/running.jpg";
+import react from "../../img/react.jpg";
+import create from "../../img/create.jpg";
+import es6 from "../../img/es6.jpg";
+import chromium from "../../img/chromium.jpg";
 
 module.exports = [
   {
@@ -17,13 +21,13 @@ module.exports = [
     title: '原生ES5，ES6',
 
     excerpt: '熟练掌握原生JavaScript，使用面向对象的思想编程，对继承，原型作用域链，js闭包，垃圾回收机制有深入理解，能使用一些设计模式来为项目解藕。熟悉ES6的用法',
-    imageUrl: imgUrl2
+    imageUrl: "../../img/es6.jpg"
   },
   {
     title: '渲染技术',
 
     excerpt: '熟练运用css3,canvas,svg,webgl开发移动端h5，及pc端视觉效果页面。并开发多个setup template。托管在github上，后面会有相应技术的例子',
-    imageUrl: imgUrl3
+    imageUrl: "../../img/chromium.jpg"
   },
   {
     title: '渲染优化',
@@ -59,7 +63,7 @@ module.exports = [
     title: 'createjs',
     link: "http://m.sohu.com/c/20252/",
     excerpt: '这是新闻中心神吐嘈的年终策划，采用createjs渲染canvas，snap操作SVG，与设计共同研究出一套制作动画H5的方案，采用AI制作SVG，FL转化为createjs代码，再操作转换后的createjs的lib',
-    imageUrl: imgUrl3
+    imageUrl: "../../img/create.jpg"
   },
   {
     title: 'pixi',
@@ -83,6 +87,6 @@ module.exports = [
     title: 'react',
     link: "http://fashion.sohu.com/s2016/fashionawards/index.shtml",
     excerpt: '这是时尚频道的时尚盛典预热专题页，采用react编写。',
-    imageUrl: imgUrl3
+    imageUrl: "../../img/react.jpg"
   },
 ];
