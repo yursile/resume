@@ -3,7 +3,27 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactCanvas = require('react-canvas');
 var Page = require('./tools/page');
-var articles = require('./data/data');
+var articles = window.data;
+
+
+
+import imgUrl1 from '../img/01.jpeg';
+import imgUrl2 from '../img/02.jpeg';
+import imgUrl3 from '../img/03.jpeg';
+import imgUrl4 from '../img/04.jpeg';
+import info from '../img/info.png';
+import running from "../img/running.jpg";
+import react from "../img/react.jpg";
+import create from "../img/create.jpg";
+import es6 from "../img/es6.jpg";
+import chromium from "../img/chromium.jpg";
+import fps from "../img/fps.jpg";
+import webpack from "../img/webpack.jpg";
+import fe from "../img/fe.jpg";
+import be from "../img/be.jpg";
+import tools from "../img/tools.jpg";
+import hz from "../img/hangzhou.png";
+
 
 
 
