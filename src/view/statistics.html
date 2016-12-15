@@ -28,3 +28,58 @@ document.write('try{vjTrack();}catch(e){}');
 document.write('</scr'+'ipt>');
 }
 </script>
+
+<script type="text/javascript">
+    (function(){
+      var  imgUrl= 'http://i0.itc.cn/20161215/3649_4f64f86f_ca6a_5e42_02e8_e7dae3944275_1.jpg';
+      var href = window.location.href;
+      var link = href;
+      var title='前端工程师';
+      var content='这个选手很是厉害';
+      var pengyouquan = "好厉害哦，前端工程师"
+      appid = "";
+      gSound = '';
+      function shareFriend() {
+          WeixinJSBridge.invoke("sendAppMessage", {
+              appid: appid,
+              img_url: imgUrl,
+              img_width: "200",
+              img_height: "200",
+              link: link,
+              desc: content,
+              title: title
+          }, function(b) {})
+      }
+
+      function shareTimeline() {
+          WeixinJSBridge.invoke("shareTimeline", {
+              appid: appid,
+              img_url: imgUrl,
+              img_width: "200",
+              img_height: "200",
+              link: link,
+              desc: content,
+              title: pengyouquan
+          }, function(b) {})
+      }
+
+      function shareWeibo() {
+          WeixinJSBridge.invoke("shareWeibo", {
+              content: content,
+              url: link
+          }, function(b) {})
+      }
+      document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
+          WeixinJSBridge.on("menu:share:appmessage", function(b) {
+              shareFriend();
+          });
+          WeixinJSBridge.on("menu:share:timeline", function(b) {
+              shareTimeline();
+          });
+          WeixinJSBridge.on("menu:share:weibo", function(b) {
+              shareWeibo();
+          })
+      }, false);
+    })()
+    
+  </script>

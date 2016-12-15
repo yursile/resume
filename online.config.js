@@ -4,11 +4,12 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-yu-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var SpritesmithPlugin = require('webpack-spritesmith');
 
 // var DOMAIN = "../../"
 // var ROOT = "dist/"
 var DOMAIN = "http://news.sohu.com/upload/"
-var ROOT = "yursile/fsdafwe/"
+var ROOT = "ky/resume/"
 module.exports={
 	entry:{
     		index:"./src/js/index.js",
@@ -21,6 +22,9 @@ module.exports={
         chunkFilename: "js/[id].chunk.js"
     },
     module: {
+        postLoaders: [
+            { loader: "transform?brfs" }
+        ],
          loaders: [ //加载器
             {
                 test: /\.less$/,
@@ -42,7 +46,7 @@ module.exports={
                 loader: "html" 
             },
             {
-                test: /\.(png|jpg)$/, 
+                test: /\.(png|jpg|jpeg)$/, 
                 loader: 'url-loader?limit=8192&name=./img/[name].[ext]'
             }
         ]
@@ -53,6 +57,31 @@ module.exports={
             'process.env': {
               'NODE_ENV': JSON.stringify('production')
             }
+        }),
+         //sprites 
+        new SpritesmithPlugin({
+            src: {
+                cwd: path.resolve(__dirname, 'src/img/sprites'),
+                glob: '*.png'
+            },
+            target: {
+                image: path.resolve(__dirname, 'src/img/sprite.png'),
+                css: [
+                // [path.resolve(__dirname, 'dist/spritesmith-generated/sprite.json'), {
+                //     format: 'json_texture'
+                // }],
+                    [path.resolve(__dirname, 'src/css/sprite.less'), {
+                        format: 'handlebars_based_template'
+                    }]
+                ]
+            },
+            apiOptions: {
+                cssImageRef: "../img/sprite.png"
+            },
+            customTemplates: {
+              
+                'handlebars_based_template': path.resolve(__dirname, 'rem.template.handlebars')
+            },
         }),
     	new webpack.ProvidePlugin({	//加载jq
             $: 'jquery'
