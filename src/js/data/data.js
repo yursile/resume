@@ -14,7 +14,8 @@ import fe from "../../img/fe.jpg";
 import be from "../../img/be.jpg";
 import tools from "../../img/tools.jpg";
 import hz from "../../img/hangzhou.png";
-
+import dj from "../../img/dongjian.jpg";
+import kp from "../../img/krpano.jpg";
 module.exports = [
   {
     title: '个人信息',
@@ -78,13 +79,13 @@ module.exports = [
     title: 'threejs',
     link: "http://dongjian.sohu.com/",
     excerpt: '这是2015年新闻中心年终策划，当时毕业3个月，独立花了一个月时间研究krpano，threejs和搭建Linux服务器，并为threejs开发了一个controls以解决业务需求，当时技术比较粗糙，而且当时android端微信不支持webgl，所以写了pc,ihpone,android三端代码',
-    imageUrl: '../../img/02.jpeg'
+    imageUrl: "../../img/dongjian.jpg"
   },
   {
     title: 'krpano',
     link: "http://dongjian.sohu.com/zlwds/",
     excerpt: '这是新闻中心两会期间的krpano产品，PC和移动两端。在krpano基础上进行定制开发。除前端开发外，搭建服务器和后台数据都是一人独立完成',
-    imageUrl: '../../img/02.jpeg'
+    imageUrl: "../../img/kp.jpg"
   },
   {
     title: 'react',

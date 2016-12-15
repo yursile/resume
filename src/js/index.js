@@ -23,7 +23,8 @@ import fe from "../img/fe.jpg";
 import be from "../img/be.jpg";
 import tools from "../img/tools.jpg";
 import hz from "../img/hangzhou.png";
-
+import dj from "../img/dongjian.jpg";
+import kp from "../img/kp.jpg";
 
 
 
